@@ -7,12 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5526AC3A76AE984A9E21E14A /* libPods-just-query.a */; };
 		07F496271C5D763E0075FB0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496261C5D763E0075FB0B /* main.m */; };
 		07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496291C5D763E0075FB0B /* AppDelegate.m */; };
 		07F4962D1C5D763E0075FB0B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F4962C1C5D763E0075FB0B /* ViewController.m */; };
 		07F496301C5D763E0075FB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F4962E1C5D763E0075FB0B /* Main.storyboard */; };
 		07F496321C5D763E0075FB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F496311C5D763E0075FB0B /* Assets.xcassets */; };
 		07F496351C5D763E0075FB0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F496331C5D763E0075FB0B /* LaunchScreen.storyboard */; };
+		07F496441C5D76B90075FB0B /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07F496401C5D76B90075FB0B /* NotoSans-Bold.ttf */; };
+		07F496451C5D76B90075FB0B /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07F496411C5D76B90075FB0B /* NotoSans-BoldItalic.ttf */; };
+		07F496461C5D76B90075FB0B /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07F496421C5D76B90075FB0B /* NotoSans-Italic.ttf */; };
+		07F496471C5D76B90075FB0B /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07F496431C5D76B90075FB0B /* NotoSans-Regular.ttf */; };
+		07F496491C5D7BDD0075FB0B /* fb-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F496481C5D7BDD0075FB0B /* fb-icon.png */; };
+		07F4964C1C5D87640075FB0B /* logocomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F4964A1C5D87640075FB0B /* logocomplete.png */; };
+		07F4964D1C5D87640075FB0B /* logosingle.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F4964B1C5D87640075FB0B /* logosingle.png */; };
+		07F496501C5D8AE80075FB0B /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F4964F1C5D8AE80075FB0B /* MaterialView.m */; };
+		07F496531C5D8C200075FB0B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496521C5D8C200075FB0B /* Constants.m */; };
+		07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496551C5E0B9A0075FB0B /* MaterialButton.m */; };
+		07F496591C5E132B0075FB0B /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496581C5E132B0075FB0B /* MaterialTextField.m */; };
+		07F4965E1C5E8A7B0075FB0B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965B1C5E8A7B0075FB0B /* Bolts.framework */; };
+		07F4965F1C5E8A7B0075FB0B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */; };
+		07F496601C5E8A7B0075FB0B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +41,26 @@
 		07F496311C5D763E0075FB0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07F496341C5D763E0075FB0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07F496361C5D763E0075FB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07F496401C5D76B90075FB0B /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		07F496411C5D76B90075FB0B /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		07F496421C5D76B90075FB0B /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		07F496431C5D76B90075FB0B /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		07F496481C5D7BDD0075FB0B /* fb-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-icon.png"; sourceTree = "<group>"; };
+		07F4964A1C5D87640075FB0B /* logocomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logocomplete.png; sourceTree = "<group>"; };
+		07F4964B1C5D87640075FB0B /* logosingle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logosingle.png; sourceTree = "<group>"; };
+		07F4964E1C5D8AE80075FB0B /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
+		07F4964F1C5D8AE80075FB0B /* MaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialView.m; sourceTree = "<group>"; };
+		07F496521C5D8C200075FB0B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		07F496541C5E0B9A0075FB0B /* MaterialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialButton.h; sourceTree = "<group>"; };
+		07F496551C5E0B9A0075FB0B /* MaterialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialButton.m; sourceTree = "<group>"; };
+		07F496571C5E132B0075FB0B /* MaterialTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTextField.h; sourceTree = "<group>"; };
+		07F496581C5E132B0075FB0B /* MaterialTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTextField.m; sourceTree = "<group>"; };
+		07F4965B1C5E8A7B0075FB0B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		5526AC3A76AE984A9E21E14A /* libPods-just-query.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-just-query.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85BB27688513E22528C137A6 /* Pods-just-query.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.debug.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.debug.xcconfig"; sourceTree = "<group>"; };
+		BBAF6605430FC9A238A49B6C /* Pods-just-query.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.release.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F4965E1C5E8A7B0075FB0B /* Bolts.framework in Frameworks */,
+				07F4965F1C5E8A7B0075FB0B /* FBSDKCoreKit.framework in Frameworks */,
+				07F496601C5E8A7B0075FB0B /* FBSDKLoginKit.framework in Frameworks */,
+				072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +83,8 @@
 			children = (
 				07F496241C5D763E0075FB0B /* just-query */,
 				07F496231C5D763E0075FB0B /* Products */,
+				6BDF53BF97DF9CA17DEB83FD /* Pods */,
+				E3D5BC77CF17BD8C376FA21F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +99,12 @@
 		07F496241C5D763E0075FB0B /* just-query */ = {
 			isa = PBXGroup;
 			children = (
+				07F4965A1C5E8A610075FB0B /* Frameworks */,
+				07F496511C5D8B470075FB0B /* Util */,
+				07F4963F1C5D76780075FB0B /* Resources */,
+				07F4963E1C5D766A0075FB0B /* View */,
+				07F4963D1C5D76620075FB0B /* Model */,
+				07F4963C1C5D76560075FB0B /* Controller */,
 				07F496281C5D763E0075FB0B /* AppDelegate.h */,
 				07F496291C5D763E0075FB0B /* AppDelegate.m */,
 				07F4962B1C5D763E0075FB0B /* ViewController.h */,
@@ -79,6 +126,82 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		07F4963C1C5D76560075FB0B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		07F4963D1C5D76620075FB0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		07F4963E1C5D766A0075FB0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07F4964E1C5D8AE80075FB0B /* MaterialView.h */,
+				07F4964F1C5D8AE80075FB0B /* MaterialView.m */,
+				07F496541C5E0B9A0075FB0B /* MaterialButton.h */,
+				07F496551C5E0B9A0075FB0B /* MaterialButton.m */,
+				07F496571C5E132B0075FB0B /* MaterialTextField.h */,
+				07F496581C5E132B0075FB0B /* MaterialTextField.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		07F4963F1C5D76780075FB0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07F4964A1C5D87640075FB0B /* logocomplete.png */,
+				07F4964B1C5D87640075FB0B /* logosingle.png */,
+				07F496481C5D7BDD0075FB0B /* fb-icon.png */,
+				07F496401C5D76B90075FB0B /* NotoSans-Bold.ttf */,
+				07F496411C5D76B90075FB0B /* NotoSans-BoldItalic.ttf */,
+				07F496421C5D76B90075FB0B /* NotoSans-Italic.ttf */,
+				07F496431C5D76B90075FB0B /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		07F496511C5D8B470075FB0B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				07F496521C5D8C200075FB0B /* Constants.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		07F4965A1C5E8A610075FB0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07F4965B1C5E8A7B0075FB0B /* Bolts.framework */,
+				07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */,
+				07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BDF53BF97DF9CA17DEB83FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85BB27688513E22528C137A6 /* Pods-just-query.debug.xcconfig */,
+				BBAF6605430FC9A238A49B6C /* Pods-just-query.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3D5BC77CF17BD8C376FA21F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5526AC3A76AE984A9E21E14A /* libPods-just-query.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07F496391C5D763E0075FB0B /* Build configuration list for PBXNativeTarget "just-query" */;
 			buildPhases = (
+				5ADB5D2E252172D6647E346C /* Check Pods Manifest.lock */,
 				07F4961E1C5D763D0075FB0B /* Sources */,
 				07F4961F1C5D763D0075FB0B /* Frameworks */,
 				07F496201C5D763D0075FB0B /* Resources */,
+				33ACD3ACFE6545B95215E1A0 /* Embed Pods Frameworks */,
+				972104F072717A8371CF43C7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,22 +262,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F496441C5D76B90075FB0B /* NotoSans-Bold.ttf in Resources */,
 				07F496351C5D763E0075FB0B /* LaunchScreen.storyboard in Resources */,
+				07F4964D1C5D87640075FB0B /* logosingle.png in Resources */,
+				07F496451C5D76B90075FB0B /* NotoSans-BoldItalic.ttf in Resources */,
+				07F4964C1C5D87640075FB0B /* logocomplete.png in Resources */,
+				07F496461C5D76B90075FB0B /* NotoSans-Italic.ttf in Resources */,
+				07F496491C5D7BDD0075FB0B /* fb-icon.png in Resources */,
 				07F496321C5D763E0075FB0B /* Assets.xcassets in Resources */,
 				07F496301C5D763E0075FB0B /* Main.storyboard in Resources */,
+				07F496471C5D76B90075FB0B /* NotoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33ACD3ACFE6545B95215E1A0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-just-query/Pods-just-query-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ADB5D2E252172D6647E346C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		972104F072717A8371CF43C7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-just-query/Pods-just-query-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07F4961E1C5D763D0075FB0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F496531C5D8C200075FB0B /* Constants.m in Sources */,
 				07F4962D1C5D763E0075FB0B /* ViewController.m in Sources */,
 				07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */,
+				07F496591C5E132B0075FB0B /* MaterialTextField.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
+				07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */,
+				07F496501C5D8AE80075FB0B /* MaterialView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,22 +446,32 @@
 		};
 		07F4963A1C5D763E0075FB0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85BB27688513E22528C137A6 /* Pods-just-query.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/just-query",
+				);
 				INFOPLIST_FILE = "just-query/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.constructisystems.carlos.just-query";
+				PRODUCT_BUNDLE_IDENTIFIER = com.constructisystems.justquery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		07F4963B1C5D763E0075FB0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBAF6605430FC9A238A49B6C /* Pods-just-query.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/just-query",
+				);
 				INFOPLIST_FILE = "just-query/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.constructisystems.carlos.just-query";
+				PRODUCT_BUNDLE_IDENTIFIER = com.constructisystems.justquery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -300,6 +495,7 @@
 				07F4963B1C5D763E0075FB0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
