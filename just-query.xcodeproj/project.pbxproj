@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5526AC3A76AE984A9E21E14A /* libPods-just-query.a */; };
 		078C22571C5EAA3900457416 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C22561C5EAA3900457416 /* LoginViewController.m */; };
+		078C225B1C5EE53300457416 /* Dataservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C225A1C5EE53300457416 /* Dataservice.m */; };
+		078C22601C5F0BA300457416 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C225F1C5F0BA300457416 /* Constants.m */; };
 		07F496271C5D763E0075FB0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496261C5D763E0075FB0B /* main.m */; };
 		07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496291C5D763E0075FB0B /* AppDelegate.m */; };
 		07F496301C5D763E0075FB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F4962E1C5D763E0075FB0B /* Main.storyboard */; };
@@ -22,7 +24,6 @@
 		07F4964C1C5D87640075FB0B /* logocomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F4964A1C5D87640075FB0B /* logocomplete.png */; };
 		07F4964D1C5D87640075FB0B /* logosingle.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F4964B1C5D87640075FB0B /* logosingle.png */; };
 		07F496501C5D8AE80075FB0B /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F4964F1C5D8AE80075FB0B /* MaterialView.m */; };
-		07F496531C5D8C200075FB0B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496521C5D8C200075FB0B /* Constants.m */; };
 		07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496551C5E0B9A0075FB0B /* MaterialButton.m */; };
 		07F496591C5E132B0075FB0B /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496581C5E132B0075FB0B /* MaterialTextField.m */; };
 		07F4965E1C5E8A7B0075FB0B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965B1C5E8A7B0075FB0B /* Bolts.framework */; };
@@ -33,6 +34,10 @@
 /* Begin PBXFileReference section */
 		078C22551C5EAA3900457416 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		078C22561C5EAA3900457416 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		078C22591C5EE53300457416 /* Dataservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dataservice.h; sourceTree = "<group>"; };
+		078C225A1C5EE53300457416 /* Dataservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dataservice.m; sourceTree = "<group>"; };
+		078C225E1C5F0B4100457416 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		078C225F1C5F0BA300457416 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		07F496221C5D763E0075FB0B /* just-query.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "just-query.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F496261C5D763E0075FB0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07F496281C5D763E0075FB0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,7 +55,6 @@
 		07F4964B1C5D87640075FB0B /* logosingle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logosingle.png; sourceTree = "<group>"; };
 		07F4964E1C5D8AE80075FB0B /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
 		07F4964F1C5D8AE80075FB0B /* MaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialView.m; sourceTree = "<group>"; };
-		07F496521C5D8C200075FB0B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		07F496541C5E0B9A0075FB0B /* MaterialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialButton.h; sourceTree = "<group>"; };
 		07F496551C5E0B9A0075FB0B /* MaterialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialButton.m; sourceTree = "<group>"; };
 		07F496571C5E132B0075FB0B /* MaterialTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTextField.h; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078C22581C5EE50700457416 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				078C22591C5EE53300457416 /* Dataservice.h */,
+				078C225A1C5EE53300457416 /* Dataservice.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		07F496191C5D763D0075FB0B = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		07F496241C5D763E0075FB0B /* just-query */ = {
 			isa = PBXGroup;
 			children = (
+				078C22581C5EE50700457416 /* Services */,
 				07F4965A1C5E8A610075FB0B /* Frameworks */,
 				07F496511C5D8B470075FB0B /* Util */,
 				07F4963F1C5D76780075FB0B /* Resources */,
@@ -170,7 +184,8 @@
 		07F496511C5D8B470075FB0B /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				07F496521C5D8C200075FB0B /* Constants.m */,
+				078C225E1C5F0B4100457416 /* Constants.h */,
+				078C225F1C5F0BA300457416 /* Constants.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -330,9 +345,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F496531C5D8C200075FB0B /* Constants.m in Sources */,
 				07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */,
 				07F496591C5E132B0075FB0B /* MaterialTextField.m in Sources */,
+				078C225B1C5EE53300457416 /* Dataservice.m in Sources */,
+				078C22601C5F0BA300457416 /* Constants.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
 				078C22571C5EAA3900457416 /* LoginViewController.m in Sources */,
 				07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */,

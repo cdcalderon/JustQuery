@@ -8,7 +8,7 @@
 
 #import "MaterialButton.h"
 #import <UIKit/UIKit.h>
-#import "Constants.m"
+#import "Constants.h"
 
 @implementation MaterialButton
 
