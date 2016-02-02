@@ -15,7 +15,6 @@
 
 +(id)sharedDataservice
 {
-//    static Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://<YOUR-FIREBASE-APP>.firebaseio.com"];
     static Dataservice *sharedDataservice = nil;
     static dispatch_once_t onceToken;
     

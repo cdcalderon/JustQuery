@@ -12,8 +12,6 @@
 #import "Dataservice.h"
 #import "Constants.h"
 
-
-
 @implementation LoginViewController
 
 - (void) viewDidAppear:(BOOL)animated
@@ -26,10 +24,8 @@
 }
 
 - (IBAction)fbButtonPressed:(UIButton *)sender {
-    
-    //Firebase *ref = [[Firebase alloc] initWithUrl:@"https://justquery.firebaseio.com"];
     FBSDKLoginManager *facebookLogin = [[FBSDKLoginManager alloc] init];
-  
+    
     [facebookLogin logInWithReadPermissions:@[@"email"]
                          fromViewController:self
                                     handler:^(FBSDKLoginManagerLoginResult *facebookResult, NSError *facebookError) {
@@ -45,24 +41,59 @@
                                             [dataService.rootRef authWithOAuthProvider:@"facebook" token:accessToken withCompletionBlock:^(NSError *error, FAuthData *authData) {
                                                 if (error) {
                                                     NSLog(@"Login failed. %@", error);
-                                                     } else {
+                                                } else {
                                                     NSLog(@"Logged in! %@", authData);
-                                                         [[NSUserDefaults standardUserDefaults]setObject:authData.uid forKey:KEY_UID];
-                                                         [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
-                                                     }
-                                            }];
-                                            
-                                           //***** ///Refactor using Data Service
-//                                            [ref authWithOAuthProvider:@"facebook" token:accessToken
-//                                                   withCompletionBlock:^(NSError *error, FAuthData *authData) {
-//                                                       if (error) {
-//                                                           NSLog(@"Login failed. %@", error);
-//                                                       } else {
-//                                                           NSLog(@"Logged in! %@", authData);
-//                                                       }
-//                                                   }];
-                                        }
+                                                    [[NSUserDefaults standardUserDefaults]setObject:authData.uid forKey:KEY_UID];
+                                                    [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
+                                                }
+                                            }];                                        }
                                     }];
 }
+
+- (IBAction)loginSignupButtonPressed:(UIButton *)sender {
+    
+    if ([self.emalAddressTextField hasText] && [self.passwordTextField hasText]) {
+        Dataservice *dataService = [Dataservice sharedDataservice];
+        [dataService.rootRef authUser:self.emalAddressTextField.text password:self.passwordTextField.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
+            
+            if ( error != nil ) {
+                NSLog(@"%@", error);
+                
+                if (error.code == STATUS_ACCOUNT_NONEXIST) {
+                    [dataService.rootRef createUser:self.emalAddressTextField.text password:self.passwordTextField.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
+                        
+                        if (error != nil) {
+                            [self showErrorAlert:@"Error Could not create account" message:@"Error creating account. Try again please"];
+                        } else {
+                            [[NSUserDefaults standardUserDefaults]setObject:result[KEY_UID] forKey:KEY_UID];
+                            [dataService.rootRef authUser:self.emalAddressTextField.text password:self.passwordTextField.text withCompletionBlock:nil];
+                            
+                            [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
+                        }
+                    }];
+                } else {
+                    [self showErrorAlert:@"Could not login" message:@"Please check your username or password"];
+                }
+            } else {
+                [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
+            }
+        }];
+        
+    } else {
+        [self showErrorAlert:@"Email and Password Required" message:@"You must enter an email and a password"];
+    }
+}
+
+- (void)showErrorAlert:(NSString *)title message:(NSString *)msg
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:msg
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alertController addAction:actionOk];
+    [self presentViewController:alertController animated:YES completion:nil];}
 
 @end

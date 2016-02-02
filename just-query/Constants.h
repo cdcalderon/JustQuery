@@ -15,5 +15,8 @@ FOUNDATION_EXPORT NSString *const KEY_UID;
 //Segues
 FOUNDATION_EXPORT NSString *const SEGUE_LOGGED_IN;
 
+//Status Codes
+FOUNDATION_EXPORT signed const STATUS_ACCOUNT_NONEXIST;
+
 
 #endif /* Constants_h */

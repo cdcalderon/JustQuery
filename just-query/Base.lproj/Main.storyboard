@@ -136,7 +136,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtS-1E-PuS" customClass="MaterialButton">
                                         <rect key="frame" x="182" y="205" width="196" height="35"/>
@@ -149,6 +149,9 @@
                                         <state key="normal" title="Login / Signup">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginSignupButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kG-0b-wfZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,12 +185,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emalAddressTextField" destination="BoH-wC-yM6" id="ucK-dQ-BPd"/>
+                        <outlet property="passwordTextField" destination="uIX-04-xjt" id="Nd5-Zi-SG5"/>
                         <segue destination="dbD-r2-Oiw" kind="show" identifier="loggedIn" id="z7E-6Z-Xpw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="507"/>
+            <point key="canvasLocation" x="289" y="516"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KzP-yc-AVZ">
@@ -205,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZl-ve-wjJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304" y="515"/>
+            <point key="canvasLocation" x="966" y="516"/>
         </scene>
     </scenes>
     <resources>
