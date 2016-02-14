@@ -8,10 +8,15 @@
 //
 
 #import "Dataservice.h"
+#import "Constants.h"
+
+@interface Dataservice()
+@property (nonatomic, retain) Firebase *usersRef;
+@property (nonatomic, retain) Firebase *questionsRef;
+
+@end
 
 @implementation Dataservice
-
-
 
 +(id)sharedDataservice
 {
@@ -28,9 +33,35 @@
 - (id)init
 {
     if (self = [super init]) {
-        _rootRef = [[Firebase alloc] initWithUrl:@"https://justquery.firebaseio.com"];
+       // _rootRef = [[Firebase alloc] initWithUrl:URL_BASE];
     }
     return self;
 }
+
+- (Firebase *)rootRef
+{
+    if (!_rootRef) _rootRef = [[Firebase alloc] initWithUrl:FIREBASE_URL_BASE];
+    return _rootRef;
+}
+
+- (Firebase *)usersRef
+{
+    if (!_usersRef) _usersRef = [[Firebase alloc] initWithUrl: [NSString stringWithFormat:@"%@%@", FIREBASE_URL_BASE, @"/users"]];
+    return _usersRef;
+}
+
+- (Firebase *)questionsRef
+{
+    if (!_questionsRef) _questionsRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@%@", FIREBASE_URL_BASE, @"/questions"]];
+    return _questionsRef;
+}
+
+- (void)createFirebaseUser:(NSString *)uid user:(NSDictionary*)user
+{
+    Firebase *newUserRef = [self.usersRef childByAppendingPath: uid];
+    [newUserRef setValue:user];
+}
+
+
 
 @end

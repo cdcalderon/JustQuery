@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5526AC3A76AE984A9E21E14A /* libPods-just-query.a */; };
+		07489BCE1C6A5F1000603ED8 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489BCD1C6A5F1000603ED8 /* Question.m */; };
+		074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074A7DAD1C64ADE90006A6A2 /* QuestionCell.m */; };
+		074A7DB11C64B6F00006A6A2 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074A7DB01C64B6F00006A6A2 /* QuestionViewController.m */; };
 		078C22571C5EAA3900457416 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C22561C5EAA3900457416 /* LoginViewController.m */; };
 		078C225B1C5EE53300457416 /* Dataservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C225A1C5EE53300457416 /* Dataservice.m */; };
 		078C22601C5F0BA300457416 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C225F1C5F0BA300457416 /* Constants.m */; };
@@ -32,6 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07489BCC1C6A5F1000603ED8 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		07489BCD1C6A5F1000603ED8 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		074A7DAC1C64ADE90006A6A2 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		074A7DAD1C64ADE90006A6A2 /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
+		074A7DAF1C64B6F00006A6A2 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		074A7DB01C64B6F00006A6A2 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		078C22551C5EAA3900457416 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		078C22561C5EAA3900457416 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		078C22591C5EE53300457416 /* Dataservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dataservice.h; sourceTree = "<group>"; };
@@ -143,6 +152,8 @@
 			children = (
 				078C22551C5EAA3900457416 /* LoginViewController.h */,
 				078C22561C5EAA3900457416 /* LoginViewController.m */,
+				074A7DAF1C64B6F00006A6A2 /* QuestionViewController.h */,
+				074A7DB01C64B6F00006A6A2 /* QuestionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -150,6 +161,8 @@
 		07F4963D1C5D76620075FB0B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07489BCC1C6A5F1000603ED8 /* Question.h */,
+				07489BCD1C6A5F1000603ED8 /* Question.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +176,8 @@
 				07F496551C5E0B9A0075FB0B /* MaterialButton.m */,
 				07F496571C5E132B0075FB0B /* MaterialTextField.h */,
 				07F496581C5E132B0075FB0B /* MaterialTextField.m */,
+				074A7DAC1C64ADE90006A6A2 /* QuestionCell.h */,
+				074A7DAD1C64ADE90006A6A2 /* QuestionCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -350,7 +365,10 @@
 				078C225B1C5EE53300457416 /* Dataservice.m in Sources */,
 				078C22601C5F0BA300457416 /* Constants.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
+				074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */,
+				074A7DB11C64B6F00006A6A2 /* QuestionViewController.m in Sources */,
 				078C22571C5EAA3900457416 /* LoginViewController.m in Sources */,
+				07489BCE1C6A5F1000603ED8 /* Question.m in Sources */,
 				07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */,
 				07F496501C5D8AE80075FB0B /* MaterialView.m in Sources */,
 			);
@@ -474,6 +492,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.constructisystems.justquery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -491,6 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.constructisystems.justquery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

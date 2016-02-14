@@ -43,6 +43,10 @@
                                                     NSLog(@"Login failed. %@", error);
                                                 } else {
                                                     NSLog(@"Logged in! %@", authData);
+                                                    
+                                                    NSDictionary *user = @{@"provider" : authData.provider, @"TestProp" : @"cool"};
+                                                    [dataService createFirebaseUser:authData.uid user:user];
+                                                    
                                                     [[NSUserDefaults standardUserDefaults]setObject:authData.uid forKey:KEY_UID];
                                                     [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
                                                 }
@@ -60,6 +64,7 @@
                 NSLog(@"%@", error);
                 
                 if (error.code == STATUS_ACCOUNT_NONEXIST) {
+                    
                     [dataService.rootRef createUser:self.emalAddressTextField.text password:self.passwordTextField.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
                         
                         if (error != nil) {
@@ -67,6 +72,13 @@
                         } else {
                             [[NSUserDefaults standardUserDefaults]setObject:result[KEY_UID] forKey:KEY_UID];
                             [dataService.rootRef authUser:self.emalAddressTextField.text password:self.passwordTextField.text withCompletionBlock:nil];
+                            [dataService.rootRef authUser:self.emalAddressTextField.text password:self.passwordTextField.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
+
+                                NSDictionary *user = @{@"provider" : authData.provider, @"Email" : @"cool test"};
+                                [dataService createFirebaseUser:authData.uid user:user];
+
+                                
+                            }];
                             
                             [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
                         }
