@@ -10,9 +10,16 @@
 #import <Firebase/Firebase.h>
 @interface Dataservice : NSObject {
     Firebase *rootRef;
+   // Firebase *users;
 }
 
+extern NSString *URL_BASE;
+
 @property (nonatomic, retain) Firebase *rootRef;
+//@property (nonatomic, retain) Firebase *users;
 
 + (id)sharedDataservice;
+- (void)createFirebaseUser:(NSString *)uid user:(NSDictionary*)user;
+- (Firebase *)questionsRef;
+
 @end

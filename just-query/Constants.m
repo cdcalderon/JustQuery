@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 
+NSString *const FIREBASE_URL_BASE = @"https://justquery.firebaseio.com";
+
 float const SHADOW_COLOR = 157 / 255.0f;
 NSString *const KEY_UID = @"uid";
 NSString *const SEGUE_LOGGED_IN = @"loggedIn";
