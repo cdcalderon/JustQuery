@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5526AC3A76AE984A9E21E14A /* libPods-just-query.a */; };
 		07489BCE1C6A5F1000603ED8 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489BCD1C6A5F1000603ED8 /* Question.m */; };
+		07489BD11C7155B600603ED8 /* AddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489BD01C7155B600603ED8 /* AddQuestionViewController.m */; };
 		074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074A7DAD1C64ADE90006A6A2 /* QuestionCell.m */; };
 		074A7DB11C64B6F00006A6A2 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074A7DB01C64B6F00006A6A2 /* QuestionViewController.m */; };
 		078C22571C5EAA3900457416 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C22561C5EAA3900457416 /* LoginViewController.m */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		07489BCC1C6A5F1000603ED8 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		07489BCD1C6A5F1000603ED8 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		07489BCF1C7155B600603ED8 /* AddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuestionViewController.h; sourceTree = "<group>"; };
+		07489BD01C7155B600603ED8 /* AddQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuestionViewController.m; sourceTree = "<group>"; };
 		074A7DAC1C64ADE90006A6A2 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		074A7DAD1C64ADE90006A6A2 /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		074A7DAF1C64B6F00006A6A2 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				078C22561C5EAA3900457416 /* LoginViewController.m */,
 				074A7DAF1C64B6F00006A6A2 /* QuestionViewController.h */,
 				074A7DB01C64B6F00006A6A2 /* QuestionViewController.m */,
+				07489BCF1C7155B600603ED8 /* AddQuestionViewController.h */,
+				07489BD01C7155B600603ED8 /* AddQuestionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				078C22601C5F0BA300457416 /* Constants.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
 				074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */,
+				07489BD11C7155B600603ED8 /* AddQuestionViewController.m in Sources */,
 				074A7DB11C64B6F00006A6A2 /* QuestionViewController.m in Sources */,
 				078C22571C5EAA3900457416 /* LoginViewController.m in Sources */,
 				07489BCE1C6A5F1000603ED8 /* Question.m in Sources */,

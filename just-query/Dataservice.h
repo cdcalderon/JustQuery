@@ -21,5 +21,7 @@ extern NSString *URL_BASE;
 + (id)sharedDataservice;
 - (void)createFirebaseUser:(NSString *)uid user:(NSDictionary*)user;
 - (Firebase *)questionsRef;
+- (Firebase *)currentUserRef;
+
 
 @end
