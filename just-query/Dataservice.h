@@ -22,6 +22,7 @@ extern NSString *URL_BASE;
 - (void)createFirebaseUser:(NSString *)uid user:(NSDictionary*)user;
 - (Firebase *)questionsRef;
 - (Firebase *)currentUserRef;
+- (Firebase *)answersRef;
 
 
 @end

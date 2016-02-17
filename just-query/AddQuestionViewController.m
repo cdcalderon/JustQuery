@@ -36,13 +36,20 @@
 - (void)postQuestionToFirebase
 {
     Dataservice *dataService = [Dataservice sharedDataservice];
+    
     NSDictionary *question = @{@"description": self.questionBody.text};
     
     Firebase *newQuestionRef = [dataService.questionsRef childByAutoId];
     [newQuestionRef setValue: question];
     
-    self.questionBody.text = @"";
+    NSString *newQuestionId = newQuestionRef.key;
+    Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"questions"];
+    NSLog(@"IDDD: %@", dataService.currentUserRef.key);
     
+    NSDictionary *userQuestion = @{newQuestionId : @YES};
+    [userQuestionsRef setValue:userQuestion];
+    
+    self.questionBody.text = @"";
 }
 
 @end

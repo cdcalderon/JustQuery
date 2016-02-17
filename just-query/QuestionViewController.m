@@ -10,6 +10,7 @@
 #import "QuestionCell.h"
 #import "Dataservice.h"
 #import "Question.h"
+#import "SubmitAnswerViewController.h"
 
 @interface QuestionViewController()
 
@@ -71,6 +72,15 @@
     
     return cell;
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[SubmitAnswerViewController class]]) {
+        SubmitAnswerViewController *svc = (SubmitAnswerViewController *)segue.destinationViewController;
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        svc.questionKey = [self.questions[path.row] questionKey];
+    }
 }
 
 

@@ -13,6 +13,7 @@
 @interface Dataservice()
 @property (nonatomic, retain) Firebase *usersRef;
 @property (nonatomic, retain) Firebase *questionsRef;
+@property (nonatomic, retain) Firebase *answersRef;
 @property (nonatomic, retain) Firebase *currentUserRef;
 
 
@@ -58,11 +59,17 @@
     return _questionsRef;
 }
 
+- (Firebase *)answersRef
+{
+    if (!_answersRef) _answersRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@%@", FIREBASE_URL_BASE, @"/answers"]];
+    return _answersRef;
+}
+
 - (Firebase *)currentUserRef
 {
     if (!_currentUserRef){
         NSString *uid = [[NSUserDefaults standardUserDefaults] valueForKey:KEY_UID];
-        _currentUserRef = [[self.usersRef childByAppendingPath: @"users"] childByAppendingPath:uid];
+        _currentUserRef = [self.usersRef childByAppendingPath:uid];
     }
     return _currentUserRef;
 }
