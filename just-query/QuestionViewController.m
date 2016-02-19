@@ -11,6 +11,7 @@
 #import "Dataservice.h"
 #import "Question.h"
 #import "SubmitAnswerViewController.h"
+#import "AddQuestionViewController.h"
 
 @interface QuestionViewController()
 
@@ -24,7 +25,7 @@
     Firebase *questionRef = [dataService questionsRef];
     [questionRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSArray *snapShots = snapshot.children.allObjects;
-        
+        [self.questions removeAllObjects];
         for (FDataSnapshot *snap in snapShots) {
             NSLog(@"Snap Key %@", snap.key);
 
@@ -83,6 +84,11 @@
     }
 }
 
-
+- (IBAction)addedQuestion:(UIStoryboardSegue *)segue
+{
+    if ([segue.destinationViewController isKindOfClass:[AddQuestionViewController class]]) {
+        NSLog(@"addedQuestion addedQuestion addedQuestion addedQuestion addedQuestion");
+    }
+}
 
 @end

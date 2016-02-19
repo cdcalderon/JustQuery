@@ -25,7 +25,7 @@
 
 - (IBAction)cancelButtonClicked:(UIButton *)sender
 {
-    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)doneButtonClicked:(UIButton *)sender
