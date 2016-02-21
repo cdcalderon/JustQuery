@@ -13,7 +13,7 @@
 @implementation SubmitAnswerViewController
 
 - (IBAction)saveAnswerButtonClicked:(UIButton *)sender {
-    
+    // Sync before push master
     NSLog(@"the question key where I need to inser the answer is :::: %@", self.questionKey);
 //    Firebase *hopperRef = [usersRef childByAppendingPath: @"gracehop"];
 //    
