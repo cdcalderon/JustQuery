@@ -12,6 +12,9 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextView *answerTextView;
+
 @property (nonatomic, strong) NSString *questionKey;
+@property (nonatomic, strong) NSString *questionBody;
+@property (weak, nonatomic) IBOutlet UITextView *questionBodyTextField;
 
 @end

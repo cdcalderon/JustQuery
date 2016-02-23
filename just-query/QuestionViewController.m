@@ -61,7 +61,6 @@
 {
     QuestionCell *cell = (QuestionCell *)[tableView dequeueReusableCellWithIdentifier:@"QuestionCustomCell" forIndexPath:indexPath];
     
-    
         if (cell == nil )
         {
             cell = [[QuestionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"QuestionCustomCell"];
@@ -81,6 +80,7 @@
         SubmitAnswerViewController *svc = (SubmitAnswerViewController *)segue.destinationViewController;
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         svc.questionKey = [self.questions[path.row] questionKey];
+        svc.questionBody = [self.questions[path.row] questionDescription];
     }
 }
 

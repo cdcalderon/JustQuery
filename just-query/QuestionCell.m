@@ -7,8 +7,30 @@
 //
 
 #import "QuestionCell.h"
+#import <UIKit/UIKit.h>
+
+@interface QuestionCell()
+@property (nonatomic, strong) UITapGestureRecognizer *tapPressGestureRecognizer;
+@end
 
 @implementation QuestionCell
+
+//- (instancetype)init
+//{
+//    self = [super init];
+//    
+//    if(self){
+//        
+//        self.tapPressGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.answersIndicator action:@selector(tapFired:)];
+//    }
+//    return self;
+//}
+//
+//- (void)tapFired:(UITapGestureRecognizer*)sender
+//{
+//
+//    NSLog(@"Gesture Rec worked");
+//}
 
 
 @end

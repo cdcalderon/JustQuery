@@ -12,6 +12,11 @@
 
 @implementation SubmitAnswerViewController
 
+- (void)viewDidLoad
+{
+    self.questionBodyTextField.text = self.questionBody;
+}
+
 - (IBAction)saveAnswerButtonClicked:(UIButton *)sender {
     // Sync before push master
     NSLog(@"the question key where I need to inser the answer is :::: %@", self.questionKey);
@@ -31,6 +36,16 @@
     Firebase *newAnswerRef = [dataService.answersRef childByAutoId];
     [newAnswerRef setValue: answer];
     
+    
+
+    Firebase *questionRef = [dataService.questionsRef childByAppendingPath:self.questionKey];
+    
+    Firebase *answersForQuestionRef = [questionRef childByAppendingPath:@"answers"];
+   
+    NSDictionary *newAnswerForQuestion = @{newAnswerRef.key : @YES};
+    
+    [answersForQuestionRef setValue: newAnswerForQuestion];
+    
 //    NSString *newQuestionId = newQuestionRef.key;
 //    Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"questions"];
 //    NSLog(@"IDDD: %@", dataService.currentUserRef.key);
@@ -40,5 +55,12 @@
     
     self.answerTextView.text = @"";
 }
+
+- (IBAction)doneButtonClicked:(id)sender {
+    [self.answerTextView resignFirstResponder];
+}
+
+
+
 
 @end
