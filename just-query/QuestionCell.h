@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *questionBody;
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
 @property (weak, nonatomic) IBOutlet UIView *answersIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *answerNumberButtonLink1;
+@property (weak, nonatomic) IBOutlet UIButton *answerIndicatorButtonLink2;
 
 @end

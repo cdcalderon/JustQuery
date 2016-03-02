@@ -16,6 +16,8 @@
 		078C22571C5EAA3900457416 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C22561C5EAA3900457416 /* LoginViewController.m */; };
 		078C225B1C5EE53300457416 /* Dataservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C225A1C5EE53300457416 /* Dataservice.m */; };
 		078C22601C5F0BA300457416 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 078C225F1C5F0BA300457416 /* Constants.m */; };
+		07B4E73F1C871B20005A26AE /* AnswersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4E73E1C871B20005A26AE /* AnswersController.m */; };
+		07B4E7421C872793005A26AE /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4E7411C872793005A26AE /* Answer.m */; };
 		07F496271C5D763E0075FB0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496261C5D763E0075FB0B /* main.m */; };
 		07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496291C5D763E0075FB0B /* AppDelegate.m */; };
 		07F496301C5D763E0075FB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F4962E1C5D763E0075FB0B /* Main.storyboard */; };
@@ -53,6 +55,10 @@
 		078C225A1C5EE53300457416 /* Dataservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dataservice.m; sourceTree = "<group>"; };
 		078C225E1C5F0B4100457416 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		078C225F1C5F0BA300457416 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		07B4E73D1C871B20005A26AE /* AnswersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersController.h; sourceTree = "<group>"; };
+		07B4E73E1C871B20005A26AE /* AnswersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersController.m; sourceTree = "<group>"; };
+		07B4E7401C872793005A26AE /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		07B4E7411C872793005A26AE /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		07F496221C5D763E0075FB0B /* just-query.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "just-query.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F496261C5D763E0075FB0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07F496281C5D763E0075FB0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 				07489BD01C7155B600603ED8 /* AddQuestionViewController.m */,
 				07489BD21C74565B00603ED8 /* SubmitAnswerViewController.h */,
 				07489BD31C74565B00603ED8 /* SubmitAnswerViewController.m */,
+				07B4E73D1C871B20005A26AE /* AnswersController.h */,
+				07B4E73E1C871B20005A26AE /* AnswersController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -173,6 +181,8 @@
 			children = (
 				07489BCC1C6A5F1000603ED8 /* Question.h */,
 				07489BCD1C6A5F1000603ED8 /* Question.m */,
+				07B4E7401C872793005A26AE /* Answer.h */,
+				07B4E7411C872793005A26AE /* Answer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -374,6 +384,7 @@
 				07F496591C5E132B0075FB0B /* MaterialTextField.m in Sources */,
 				078C225B1C5EE53300457416 /* Dataservice.m in Sources */,
 				078C22601C5F0BA300457416 /* Constants.m in Sources */,
+				07B4E7421C872793005A26AE /* Answer.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
 				074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */,
 				07489BD11C7155B600603ED8 /* AddQuestionViewController.m in Sources */,
@@ -381,6 +392,7 @@
 				07489BD41C74565B00603ED8 /* SubmitAnswerViewController.m in Sources */,
 				078C22571C5EAA3900457416 /* LoginViewController.m in Sources */,
 				07489BCE1C6A5F1000603ED8 /* Question.m in Sources */,
+				07B4E73F1C871B20005A26AE /* AnswersController.m in Sources */,
 				07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */,
 				07F496501C5D8AE80075FB0B /* MaterialView.m in Sources */,
 			);

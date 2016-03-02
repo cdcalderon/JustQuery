@@ -12,6 +12,7 @@
 #import "Question.h"
 #import "SubmitAnswerViewController.h"
 #import "AddQuestionViewController.h"
+#import "AnswersController.h"
 
 @interface QuestionViewController()
 
@@ -69,7 +70,8 @@
     
     cell.myLabel.text = [self.questions[indexPath.row] questionKey];
     cell.questionBody.text = [self.questions[indexPath.row] questionDescription];
-    
+    cell.answerNumberButtonLink1.tag = indexPath.row;
+    cell.answerIndicatorButtonLink2.tag = indexPath.row;
     return cell;
 
 }
@@ -81,6 +83,12 @@
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         svc.questionKey = [self.questions[path.row] questionKey];
         svc.questionBody = [self.questions[path.row] questionDescription];
+    } else if ([segue.destinationViewController isKindOfClass:[AnswersController class]]) {
+        AnswersController *ac = (AnswersController *)segue.destinationViewController;
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        UIButton *pressedButton = (UIButton *)sender;
+        ac.questionBodyDescription = [self.questions[pressedButton.tag] questionDescription];
+        ac.questionKey = [self.questions[pressedButton.tag] questionKey];
     }
 }
 
