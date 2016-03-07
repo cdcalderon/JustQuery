@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnswersController : UIViewController
+@interface AnswersController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *questionBody;
 @property (nonatomic, strong) NSString *questionBodyDescription;
 @property (nonatomic, strong) NSString *questionKey;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewAnswers;
 @property (nonatomic, strong) NSMutableArray *answers;
 @end
