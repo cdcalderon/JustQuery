@@ -67,7 +67,6 @@
             cell = [[QuestionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"QuestionCustomCell"];
         }
     
-    
     cell.myLabel.text = [self.questions[indexPath.row] questionKey];
     cell.questionBody.text = [self.questions[indexPath.row] questionDescription];
     cell.answerNumberButtonLink1.tag = indexPath.row;

@@ -30,31 +30,43 @@
     
     [answersForQuestionRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSArray *snapShots = snapshot.children.allObjects;
-        [self.answers removeAllObjects];
-        for (FDataSnapshot *snap in snapShots) {
-            NSLog(@"Answer Key %@", snap.key);
+                for (FDataSnapshot *snap in snapShots) {
+            NSLog(@"Answer Key Destination %@", snap.key);
             
-            Firebase *answerRef = [dataService.answersRef childByAppendingPath:snap.key];
-            
-            [answerRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                NSLog(@"Content  %@", snapshot.value);
+            //Firebase *answerRef = [dataService.answersRef childByAppendingPath:snap.key];
+            NSArray *snapShotsA = snapshot.children.allObjects;
+            for (FDataSnapshot *snap2 in snapShotsA) {
+                //[self.answers removeAllObjects];
+
+                NSLog(@"Answer2 Key Destination %@", snap2.key);
                 
-                Answer *answer = [[Answer alloc] init:snap.key dictionary:snapshot.value];
+                NSDictionary *answer = snap2.value;
                 
-                [self.answers addObject: answer];
-                [self.tableViewAnswers reloadData];
-            } withCancelBlock:^(NSError *error) {
-                NSLog(@"%@", error.description);
-            }];
-            
-           // NSLog(@"Answer Value %@", snap.value);
-            
-           // Question *question = [[Question alloc] init:snap.key dictionary:snap.value];
-            
-            //[self.answers addObject: question];
-            
-            
-        }
+                if([answer isKindOfClass:[NSDictionary class]]){
+                    NSString *answerKey = [[answer allKeys] objectAtIndex:0];
+                    NSLog(@"Answer2 Value Destination %@", answerKey);
+                    Firebase *answerRef = [dataService.answersRef childByAppendingPath:answerKey];
+                    
+                    
+                    [answerRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
+                        NSLog(@"Content Answer Destination:::::  %@", snapshot2.value);
+                        
+                        Answer *answer = [[Answer alloc] init:snapshot2.key dictionary:snapshot2.value];
+                        
+                        
+                        if (![self containAnswer:answer]) {
+                            [self.answers addObject: answer];
+                        }
+                        
+                        [self.tableViewAnswers reloadData];
+                    } withCancelBlock:^(NSError *error) {
+                        NSLog(@"%@", error.description);
+                    }];
+                    
+                }
+                
+            }
+                }
         //[self.tableView reloadData];
     } withCancelBlock:^(NSError *error) {
         NSLog(@"%@", error.description);
@@ -91,6 +103,15 @@
     return cell;
 }
 
-
+- (BOOL)containAnswer:(Answer *)answer
+{
+    for (Answer *ans in self.answers) {
+        if (ans.answerKey == answer.answerKey) {
+            return YES;
+        }
+        // do something with object
+    }
+    return NO;
+}
 
 @end

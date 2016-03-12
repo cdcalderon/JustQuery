@@ -20,40 +20,29 @@
 - (IBAction)saveAnswerButtonClicked:(UIButton *)sender {
     // Sync before push master
     NSLog(@"the question key where I need to inser the answer is :::: %@", self.questionKey);
-//    Firebase *hopperRef = [usersRef childByAppendingPath: @"gracehop"];
-//    
-//    NSDictionary *nickname = @{
-//                               @"nickname": @"Amazing Grace",
-//                               };
-//    
-//    [hopperRef updateChildValues: nickname];
-    
     
     Dataservice *dataService = [Dataservice sharedDataservice];
     
+    //create new answer
     NSDictionary *answer = @{@"description": self.answerTextView.text};
-    
     Firebase *newAnswerRef = [dataService.answersRef childByAutoId];
     [newAnswerRef setValue: answer];
     
-    
-
     Firebase *questionRef = [dataService.questionsRef childByAppendingPath:self.questionKey];
-    
     Firebase *answersForQuestionRef = [questionRef childByAppendingPath:@"answers"];
    
     NSDictionary *newAnswerForQuestion = @{newAnswerRef.key : @YES};
     
-    [answersForQuestionRef setValue: newAnswerForQuestion];
+    //////
+    Firebase *newAnswerRef2 = [answersForQuestionRef childByAutoId];
+    [newAnswerRef2 setValue: newAnswerForQuestion];
+
     
-//    NSString *newQuestionId = newQuestionRef.key;
-//    Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"questions"];
-//    NSLog(@"IDDD: %@", dataService.currentUserRef.key);
-//    
-//    NSDictionary *userQuestion = @{newQuestionId : @YES};
-//    [userQuestionsRef setValue:userQuestion];
+    /////
+   // [answersForQuestionRef setValue: newAnswerForQuestion];
     
     self.answerTextView.text = @"";
+    
 }
 
 - (IBAction)doneButtonClicked:(id)sender {
@@ -64,3 +53,4 @@
 
 
 @end
+
