@@ -72,7 +72,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-c0-3Fn">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-L5-n8x" customClass="MaterialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-L5-n8x" customClass="MaterialButton">
                                                 <rect key="frame" x="105" y="16" width="419" height="34"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="16"/>
@@ -331,6 +331,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Dqm-Oa-Zve">
+                        <barButtonItem key="leftBarButtonItem" title="User" id="l57-FG-tuJ">
+                            <connections>
+                                <segue destination="9TG-wW-Gpc" kind="show" id="SaN-88-JzS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ypm-QR-hj4">
                             <connections>
                                 <segue destination="zVA-tT-NSX" kind="presentation" identifier="AddQuestion" id="VVy-Cc-96C"/>
@@ -341,6 +346,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMu-A0-uBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1678" y="444"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="DaN-OA-f0x">
+            <objects>
+                <viewController id="9TG-wW-Gpc" customClass="UserProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NO1-s4-ZhX"/>
+                        <viewControllerLayoutGuide type="bottom" id="VuW-0w-9pS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sdu-dX-Vft">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOl-DA-Ccs">
+                                <rect key="frame" x="128" y="323" width="93" height="30"/>
+                                <state key="normal" title="Add Image"/>
+                                <connections>
+                                    <action selector="addUserImageClicked:" destination="9TG-wW-Gpc" eventType="touchUpInside" id="8nq-Jf-Afg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tK4-dN-jKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="1258"/>
         </scene>
         <!--Answer-->
         <scene sceneID="DMA-bv-dto">

@@ -36,6 +36,7 @@
 		07F4965E1C5E8A7B0075FB0B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965B1C5E8A7B0075FB0B /* Bolts.framework */; };
 		07F4965F1C5E8A7B0075FB0B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */; };
 		07F496601C5E8A7B0075FB0B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */; };
+		07FFF76B1C96239D003F4CDE /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,8 @@
 		07F4965B1C5E8A7B0075FB0B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		07FFF7691C96239D003F4CDE /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		5526AC3A76AE984A9E21E14A /* libPods-just-query.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-just-query.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85BB27688513E22528C137A6 /* Pods-just-query.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.debug.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAF6605430FC9A238A49B6C /* Pods-just-query.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.release.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				07489BD31C74565B00603ED8 /* SubmitAnswerViewController.m */,
 				07B4E73D1C871B20005A26AE /* AnswersController.h */,
 				07B4E73E1C871B20005A26AE /* AnswersController.m */,
+				07FFF7691C96239D003F4CDE /* UserProfileViewController.h */,
+				07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				078C225B1C5EE53300457416 /* Dataservice.m in Sources */,
 				078C22601C5F0BA300457416 /* Constants.m in Sources */,
 				07B4E7421C872793005A26AE /* Answer.m in Sources */,
+				07FFF76B1C96239D003F4CDE /* UserProfileViewController.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
 				074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */,
 				07489BD11C7155B600603ED8 /* AddQuestionViewController.m in Sources */,
