@@ -5,5 +5,6 @@
 
 target 'just-query' do
 pod 'Firebase', '>= 2.5.0'
+pod 'AFNetworking', '~> 2.6'
 end
 

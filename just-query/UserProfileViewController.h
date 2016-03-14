@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking.h>
+#import "Cloudinary/CLUploader.h"
 
-@interface UserProfileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface UserProfileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLUploaderDelegate>
+
+@property (nonatomic, strong) AFHTTPRequestOperationManager *userProfileOperationManager;
 
 @end

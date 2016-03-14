@@ -37,6 +37,8 @@
 		07F4965F1C5E8A7B0075FB0B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */; };
 		07F496601C5E8A7B0075FB0B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */; };
 		07FFF76B1C96239D003F4CDE /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */; };
+		07FFF76D1C96605B003F4CDE /* libCloudinary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FFF76C1C96605B003F4CDE /* libCloudinary.a */; };
+		07FFF76F1C96687B003F4CDE /* Cloudinary in Resources */ = {isa = PBXBuildFile; fileRef = 07FFF76E1C96687B003F4CDE /* Cloudinary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		07FFF7691C96239D003F4CDE /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		07FFF76C1C96605B003F4CDE /* libCloudinary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCloudinary.a; sourceTree = "<group>"; };
+		07FFF76E1C96687B003F4CDE /* Cloudinary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cloudinary; sourceTree = "<group>"; };
 		5526AC3A76AE984A9E21E14A /* libPods-just-query.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-just-query.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85BB27688513E22528C137A6 /* Pods-just-query.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.debug.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAF6605430FC9A238A49B6C /* Pods-just-query.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.release.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				07F4965E1C5E8A7B0075FB0B /* Bolts.framework in Frameworks */,
 				07F4965F1C5E8A7B0075FB0B /* FBSDKCoreKit.framework in Frameworks */,
 				07F496601C5E8A7B0075FB0B /* FBSDKLoginKit.framework in Frameworks */,
+				07FFF76D1C96605B003F4CDE /* libCloudinary.a in Frameworks */,
 				072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +141,7 @@
 		07F496241C5D763E0075FB0B /* just-query */ = {
 			isa = PBXGroup;
 			children = (
+				07FFF76E1C96687B003F4CDE /* Cloudinary */,
 				078C22581C5EE50700457416 /* Services */,
 				07F4965A1C5E8A610075FB0B /* Frameworks */,
 				07F496511C5D8B470075FB0B /* Util */,
@@ -233,6 +239,7 @@
 		07F4965A1C5E8A610075FB0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07FFF76C1C96605B003F4CDE /* libCloudinary.a */,
 				07F4965B1C5E8A7B0075FB0B /* Bolts.framework */,
 				07F4965C1C5E8A7B0075FB0B /* FBSDKCoreKit.framework */,
 				07F4965D1C5E8A7B0075FB0B /* FBSDKLoginKit.framework */,
@@ -323,6 +330,7 @@
 				07F496451C5D76B90075FB0B /* NotoSans-BoldItalic.ttf in Resources */,
 				07F4964C1C5D87640075FB0B /* logocomplete.png in Resources */,
 				07F496461C5D76B90075FB0B /* NotoSans-Italic.ttf in Resources */,
+				07FFF76F1C96687B003F4CDE /* Cloudinary in Resources */,
 				07F496491C5D7BDD0075FB0B /* fb-icon.png in Resources */,
 				07F496321C5D763E0075FB0B /* Assets.xcassets in Resources */,
 				07F496301C5D763E0075FB0B /* Main.storyboard in Resources */,
@@ -520,6 +528,10 @@
 				);
 				INFOPLIST_FILE = "just-query/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/just-query",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.constructisystems.justquery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -538,6 +550,10 @@
 				);
 				INFOPLIST_FILE = "just-query/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/just-query",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.constructisystems.justquery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
