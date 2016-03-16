@@ -15,6 +15,7 @@
 @property (nonatomic, retain) Firebase *questionsRef;
 @property (nonatomic, retain) Firebase *answersRef;
 @property (nonatomic, retain) Firebase *currentUserRef;
+@property (nonatomic, retain) Firebase *profilesRef;
 
 
 @end
@@ -72,6 +73,12 @@
         _currentUserRef = [self.usersRef childByAppendingPath:uid];
     }
     return _currentUserRef;
+}
+
+- (Firebase *)profilesRef
+{
+    if (!_profilesRef) _profilesRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@%@", FIREBASE_URL_BASE, @"/profiles"]];
+    return _profilesRef;
 }
 
 - (void)createFirebaseUser:(NSString *)uid user:(NSDictionary*)user

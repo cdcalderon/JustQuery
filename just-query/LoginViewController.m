@@ -106,6 +106,12 @@
                                                        style:UIAlertActionStyleDefault
                                                      handler:nil];
     [alertController addAction:actionOk];
-    [self presentViewController:alertController animated:YES completion:nil];}
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *s = @"";
+}
 
 @end

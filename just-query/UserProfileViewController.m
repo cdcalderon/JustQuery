@@ -10,8 +10,40 @@
 #import "Cloudinary/CLCloudinary.h"
 #import "Cloudinary/CLTransformation.h"
 
+
 @implementation UserProfileViewController
 
+- (void)viewDidLoad
+{
+    
+    Dataservice *dataService = [Dataservice sharedDataservice];
+    
+    Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"profile"];
+   
+
+    // Attach a block to read the data at our posts reference
+    [userQuestionsRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        NSDictionary *profile = snapshot.value;
+        
+        if([profile isKindOfClass:[NSDictionary class]]){
+            NSString *profileKey = [[profile allKeys] objectAtIndex:0];
+            NSLog(@"%@", [[profile allKeys] objectAtIndex:0]);
+        
+         _userProfileRef = [dataService.profilesRef childByAppendingPath:profileKey];
+            // Attach a block to read the data at our posts reference
+            [_userProfileRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                NSLog(@"%@", snapshot.value);
+            } withCancelBlock:^(NSError *error) {
+                NSLog(@"%@", error.description);
+            }];
+        }
+        
+        
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+}
 
 - (IBAction)addUserImageClicked:(UIButton *)sender {
 
@@ -40,60 +72,65 @@
    // CLCloudinary *cloudinary = [[CLCloudinary alloc] init];
     //[cloudinary.config setValue:@"demo" forKey:@"cloud_name"];
     
-    NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:@"logocomplete"
-                                                              ofType:@"png"];
+    //NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:@"logocomplete" ofType:@"png"];
     
     CLUploader* uploader = [[CLUploader alloc] init:cloudinary delegate:self];
    // [uploader unsignedUpload:imageFilePath uploadPreset:@"zcudy0uz" options:@{}];
     
     
-    UIImage *image = info[UIImagePickerControllerEditedImage];
-    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    _userProfileImage = info[UIImagePickerControllerEditedImage];
+    if (!_userProfileImage) _userProfileImage = info[UIImagePickerControllerOriginalImage];
     
     
     
-    NSData *imageToUpload = UIImageJPEGRepresentation(image, 0.2);
+//    NSData *imageToUpload = UIImageJPEGRepresentation(_userProfileImage, 0.2);
+//    
+//    if (imageToUpload)
+//    {
+//    
+////        NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
+////        
+////        [uploader unsignedUpload:imageToUpload uploadPreset:@"zcudy0uz" options:[NSDictionary dictionaryWithObjectsAndKeys:@"user_sample_image_Carlos", @"public_id", @"tags", @"ios_upload", nil] withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
+////            
+////            if (successResult) {
+////                
+////                NSString* publicId = [successResult valueForKey:@"public_id"];
+////                NSLog(@"Upload success. Public ID=%@, Full result=%@", publicId, successResult);
+////                CLTransformation *transformation = [CLTransformation transformation];
+////                [transformation setWidthWithInt: 150];
+////                [transformation setHeightWithInt: 100];
+////                [transformation setCrop: @"fill"];
+////                [transformation setGravity:@"face"];
+////                
+////                NSLog(@"Result: %@", [cloudinary url:publicId options:@{@"transformation": transformation, @"format": @"jpg"}]);
+////                
+////            } else {
+////                
+////                NSLog(@"Upload error: %@, %d", errorResult, code);
+////                
+////            }
+////            
+////        } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
+////            NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
+////        }];
+////        
+////        NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
+////        [uploader upload:imageData options:@{@"public_id": @"ios_image_1"}];
+////        
+////        
+////        
+////        
+//        
+//        [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_5"}];
+//        
+//        
+//        
+//    }
     
-    if (imageToUpload)
-    {
-    
-       // NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
-        
-//        [uploader unsignedUpload:imageToUpload uploadPreset:@"zcudy0uz" options:[NSDictionary dictionaryWithObjectsAndKeys:@"user_sample_image_Carlos", @"public_id", @"tags", @"ios_upload", nil] withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
-//            
-//            if (successResult) {
-//                
-//                NSString* publicId = [successResult valueForKey:@"public_id"];
-//                NSLog(@"Upload success. Public ID=%@, Full result=%@", publicId, successResult);
-//                CLTransformation *transformation = [CLTransformation transformation];
-//                [transformation setWidthWithInt: 150];
-//                [transformation setHeightWithInt: 100];
-//                [transformation setCrop: @"fill"];
-//                [transformation setGravity:@"face"];
-//                
-//                NSLog(@"Result: %@", [cloudinary url:publicId options:@{@"transformation": transformation, @"format": @"jpg"}]);
-//                
-//            } else {
-//                
-//                NSLog(@"Upload error: %@, %d", errorResult, code);
-//                
-//            }
-//            
-//        } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
-//            NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
-//        }];
-        
-        //NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
-        //[uploader upload:imageData options:@{@"public_id": @"ios_image_1"}];
-        
-        [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_3"}];
-        
-    }
     
     
     
-    
-    NSLog(@"FInish Pickeing");
+    NSLog(@"Finish Picking");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -116,5 +153,83 @@
     NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
 }
 
+- (IBAction)postUserProfile:(UIButton *)sender {
+    [self postProfileToFirebase];
+}
+
+- (void)postProfileToFirebase
+{
+    CLCloudinary *cloudinary = [[CLCloudinary alloc] init];
+    [cloudinary.config setValue:@"carlos-calderon" forKey:@"cloud_name"];
+    [cloudinary.config setValue:@"686262751217777" forKey:@"api_key"];
+    [cloudinary.config setValue:@"5qSCCtXQ45SHWF-dUeNi7JkpwZY" forKey:@"api_secret"];
+    
+    
+    // CLCloudinary *cloudinary = [[CLCloudinary alloc] init];
+    //[cloudinary.config setValue:@"demo" forKey:@"cloud_name"];
+    
+    //NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:@"logocomplete" ofType:@"png"];
+    
+    CLUploader* uploader = [[CLUploader alloc] init:cloudinary delegate:self];
+
+    
+    Dataservice *dataService = [Dataservice sharedDataservice];
+    
+    NSDictionary *profile = @{@"picture": @"mypic2Updated", @"description": @"my descr2Updated"};
+    
+    if (_userProfileRef != nil ) {
+        NSData *imageToUpload = UIImageJPEGRepresentation(_userProfileImage, 0.2);
+        
+        if (imageToUpload)
+        {
+
+            [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_8"} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
+                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": @"my descr2Carlos updated"};
+                [_userProfileRef updateChildValues:profile];
+                
+            } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
+                NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
+            }];
+            
+
+        }
+        
+        //[_userProfileRef updateChildValues:profile];
+    } else {
+        
+        NSData *imageToUpload = UIImageJPEGRepresentation(_userProfileImage, 0.2);
+        
+        if (imageToUpload)
+        {
+
+            [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_5"} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
+                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": @"my descr2Updated"};
+                
+
+                Firebase *newQuestionRef = [dataService.profilesRef childByAutoId];
+                [newQuestionRef setValue: profile];
+                
+                
+                NSString *newQuestionId = newQuestionRef.key;
+                Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"profile"];
+                NSLog(@"IDDD: %@", dataService.currentUserRef.key);
+                
+                NSDictionary *userQuestion = @{newQuestionId : @YES};
+                [userQuestionsRef setValue:userQuestion];
+                
+                
+            } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
+                NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
+            }];
+
+            
+        }
+        
+    }
+    
+    
+    
+    //self.questionBody.text = @"";
+}
 
 @end

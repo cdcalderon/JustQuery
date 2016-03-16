@@ -13,6 +13,7 @@
 #import "SubmitAnswerViewController.h"
 #import "AddQuestionViewController.h"
 #import "AnswersController.h"
+#import "UserProfileViewController.h"
 
 @interface QuestionViewController()
 
@@ -88,7 +89,11 @@
         UIButton *pressedButton = (UIButton *)sender;
         ac.questionBodyDescription = [self.questions[pressedButton.tag] questionDescription];
         ac.questionKey = [self.questions[pressedButton.tag] questionKey];
+    } else if ([segue.destinationViewController isKindOfClass:[UserProfileViewController class]]) {
+        UserProfileViewController *ac = (UserProfileViewController *)segue.destinationViewController;
+       
     }
+
 }
 
 - (IBAction)addedQuestion:(UIStoryboardSegue *)segue
