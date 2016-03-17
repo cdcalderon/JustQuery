@@ -18,5 +18,7 @@
 
 @property (nonatomic, strong) Firebase *userProfileRef;
 @property (nonatomic, strong) UIImage *userProfileImage;
+@property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
+@property (weak, nonatomic) IBOutlet UITextView *userDescription;
 
 @end

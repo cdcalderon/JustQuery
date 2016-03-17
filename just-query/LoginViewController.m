@@ -87,7 +87,10 @@
                     [self showErrorAlert:@"Could not login" message:@"Please check your username or password"];
                 }
             } else {
+                [[NSUserDefaults standardUserDefaults]setObject:authData.uid forKey:KEY_UID];
                 [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
+
+                //[self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
             }
         }];
         

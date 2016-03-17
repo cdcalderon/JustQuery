@@ -39,6 +39,7 @@
 		07FFF76B1C96239D003F4CDE /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */; };
 		07FFF76D1C96605B003F4CDE /* libCloudinary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FFF76C1C96605B003F4CDE /* libCloudinary.a */; };
 		07FFF76F1C96687B003F4CDE /* Cloudinary in Resources */ = {isa = PBXBuildFile; fileRef = 07FFF76E1C96687B003F4CDE /* Cloudinary */; };
+		07FFF7711C9A7DEA003F4CDE /* placeholder-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FFF7701C9A7DEA003F4CDE /* placeholder-user.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		07FFF76C1C96605B003F4CDE /* libCloudinary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCloudinary.a; sourceTree = "<group>"; };
 		07FFF76E1C96687B003F4CDE /* Cloudinary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cloudinary; sourceTree = "<group>"; };
+		07FFF7701C9A7DEA003F4CDE /* placeholder-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-user.png"; sourceTree = "<group>"; };
 		5526AC3A76AE984A9E21E14A /* libPods-just-query.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-just-query.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85BB27688513E22528C137A6 /* Pods-just-query.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.debug.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAF6605430FC9A238A49B6C /* Pods-just-query.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-just-query.release.xcconfig"; path = "Pods/Target Support Files/Pods-just-query/Pods-just-query.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		07F4963F1C5D76780075FB0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07FFF7701C9A7DEA003F4CDE /* placeholder-user.png */,
 				07F4964A1C5D87640075FB0B /* logocomplete.png */,
 				07F4964B1C5D87640075FB0B /* logosingle.png */,
 				07F496481C5D7BDD0075FB0B /* fb-icon.png */,
@@ -334,6 +337,7 @@
 				07F496491C5D7BDD0075FB0B /* fb-icon.png in Resources */,
 				07F496321C5D763E0075FB0B /* Assets.xcassets in Resources */,
 				07F496301C5D763E0075FB0B /* Main.storyboard in Resources */,
+				07FFF7711C9A7DEA003F4CDE /* placeholder-user.png in Resources */,
 				07F496471C5D76B90075FB0B /* NotoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

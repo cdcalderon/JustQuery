@@ -9,6 +9,8 @@
 #import "UserProfileViewController.h"
 #import "Cloudinary/CLCloudinary.h"
 #import "Cloudinary/CLTransformation.h"
+#import  <AFNetworking/AFNetworking.h>
+#import  <AFNetworking/AFHTTPRequestOperation.h>
 
 
 @implementation UserProfileViewController
@@ -27,6 +29,7 @@
         NSDictionary *profile = snapshot.value;
         
         if([profile isKindOfClass:[NSDictionary class]]){
+            
             NSString *profileKey = [[profile allKeys] objectAtIndex:0];
             NSLog(@"%@", [[profile allKeys] objectAtIndex:0]);
         
@@ -34,6 +37,26 @@
             // Attach a block to read the data at our posts reference
             [_userProfileRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
                 NSLog(@"%@", snapshot.value);
+                
+                if([snapshot.value isKindOfClass:[NSDictionary class]]){
+                    NSString *profileDescription = [snapshot.value objectForKey:@"description"];
+                    NSString *imageUrl = [snapshot.value objectForKey:@"picture"];
+                    self.userDescription.text = profileDescription;
+                    NSURL *url = [NSURL URLWithString:imageUrl];
+                    
+                    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                    [NSURLConnection sendAsynchronousRequest:request
+                                                       queue:[NSOperationQueue mainQueue]
+                                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                               if ( !error )
+                                               {
+                                                   UIImage *image = [[UIImage alloc] initWithData:data];
+                                                   _userProfileImageView.image = image;
+                                               } else{
+                                                   NSLog(@"Error @%", error);                                               }
+                                           }];
+
+                }
             } withCancelBlock:^(NSError *error) {
                 NSLog(@"%@", error.description);
             }];
@@ -183,8 +206,8 @@
         if (imageToUpload)
         {
 
-            [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_8"} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
-                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": @"my descr2Carlos updated"};
+            [uploader upload:imageToUpload options:@{@"public_id": dataService.currentUserRef.key} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
+                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": self.userDescription.text};
                 [_userProfileRef updateChildValues:profile];
                 
             } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
@@ -202,8 +225,8 @@
         if (imageToUpload)
         {
 
-            [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_5"} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
-                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": @"my descr2Updated"};
+            [uploader upload:imageToUpload options:@{@"public_id": dataService.currentUserRef.key} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
+                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": self.userDescription.text};
                 
 
                 Firebase *newQuestionRef = [dataService.profilesRef childByAutoId];
