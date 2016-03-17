@@ -76,8 +76,6 @@
 
                                 NSDictionary *user = @{@"provider" : authData.provider, @"Email" : @"cool test"};
                                 [dataService createFirebaseUser:authData.uid user:user];
-
-                                
                             }];
                             
                             [self performSegueWithIdentifier:SEGUE_LOGGED_IN sender:nil];
