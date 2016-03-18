@@ -19,10 +19,10 @@
 - (instancetype)init:(NSString *)questionKey dictionary:(NSDictionary *)dictionary
 {
     self = [super init];
-    
     self.questionKey = questionKey;
     self.questionDescription = dictionary[@"description"];
-    
+    self.userId = dictionary[@"userId"];
+
     return self;
 }
 

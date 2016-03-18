@@ -201,7 +201,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="190"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YMM-be-QDc" id="DqB-Zz-D3D">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="189.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9O-HT-lVM">
@@ -282,6 +282,7 @@
                                     <outlet property="answerNumberButtonLink1" destination="WTM-CX-vBJ" id="geg-dz-UBu"/>
                                     <outlet property="myLabel" destination="zD4-0v-pVL" id="tGC-yh-nCT"/>
                                     <outlet property="questionBody" destination="HhZ-bg-S9z" id="a32-0y-ibz"/>
+                                    <outlet property="userPicture" destination="dMD-hp-hIo" id="bcA-rU-tSe"/>
                                     <segue destination="1ZQ-Ao-pUN" kind="show" id="ks8-ig-Stw"/>
                                 </connections>
                             </tableViewCell>

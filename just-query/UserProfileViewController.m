@@ -20,11 +20,11 @@
     
     Dataservice *dataService = [Dataservice sharedDataservice];
     
-    Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"profile"];
+    Firebase *userProfileRef = [dataService.currentUserRef childByAppendingPath:@"profile"];
    
 
     // Attach a block to read the data at our posts reference
-    [userQuestionsRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    [userProfileRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
         NSDictionary *profile = snapshot.value;
         
@@ -234,11 +234,11 @@
                 
                 
                 NSString *newQuestionId = newQuestionRef.key;
-                Firebase *userQuestionsRef = [dataService.currentUserRef childByAppendingPath:@"profile"];
+                Firebase *userProfileRef = [dataService.currentUserRef childByAppendingPath:@"profile"];
                 NSLog(@"IDDD: %@", dataService.currentUserRef.key);
                 
                 NSDictionary *userQuestion = @{newQuestionId : @YES};
-                [userQuestionsRef setValue:userQuestion];
+                [userProfileRef setValue:userQuestion];
                 
                 
             } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {

@@ -24,6 +24,7 @@ extern NSString *URL_BASE;
 - (Firebase *)currentUserRef;
 - (Firebase *)answersRef;
 - (Firebase *)profilesRef;
+- (Firebase *)usersRef;
 
 
 @end

@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *questionDescription;
 @property (nonatomic, strong) NSString *questionKey;
+@property (nonatomic, strong) NSString *userId;
 
 - (instancetype)init:(NSString *)questionKey dictionary:(NSDictionary *)dictionary;
 @end

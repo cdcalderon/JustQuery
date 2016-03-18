@@ -37,7 +37,7 @@
 {
     Dataservice *dataService = [Dataservice sharedDataservice];
     
-    NSDictionary *question = @{@"description": self.questionBody.text};
+    NSDictionary *question = @{@"description": self.questionBody.text, @"userId": dataService.currentUserRef.key};
     
     Firebase *newQuestionRef = [dataService.questionsRef childByAutoId];
     [newQuestionRef setValue: question];
