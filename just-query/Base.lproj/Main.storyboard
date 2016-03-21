@@ -241,7 +241,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="94" id="KH8-0M-pUd"/>
                                                         <constraint firstAttribute="height" constant="94" id="rST-Fq-kyE"/>
                                                     </constraints>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -309,7 +309,7 @@
             </objects>
             <point key="canvasLocation" x="1678" y="444"/>
         </scene>
-        <!--User Profile View Controller-->
+        <!--User Profile-->
         <scene sceneID="DaN-OA-f0x">
             <objects>
                 <viewController id="9TG-wW-Gpc" customClass="UserProfileViewController" sceneMemberID="viewController">
@@ -343,7 +343,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK1-gh-Hhv">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK1-gh-Hhv">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="18"/>
@@ -379,6 +379,15 @@
                             <constraint firstItem="TnL-QH-eXW" firstAttribute="leading" secondItem="2qR-WK-xuc" secondAttribute="leading" id="uu6-mT-eIs"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="User Profile" id="Dvl-Eh-rLe">
+                        <barButtonItem key="rightBarButtonItem" title="User Profiles" id="2t7-iE-hKE">
+                            <connections>
+                                <segue destination="JJB-hh-IZp" kind="show" id="qbv-Cc-I4x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="userDescription" destination="TnL-QH-eXW" id="3Ix-V7-Qen"/>
                         <outlet property="userProfileImageView" destination="xsN-4R-0YK" id="9li-Wj-ZIS"/>
@@ -387,6 +396,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tK4-dN-jKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="1258"/>
+        </scene>
+        <!--User Profiles Table View Controller-->
+        <scene sceneID="WS6-hg-NxZ">
+            <objects>
+                <tableViewController id="JJB-hh-IZp" customClass="UserProfilesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BRR-G2-sPx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="23g-kO-VF6">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="23g-kO-VF6" id="zZH-ws-BOj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JJB-hh-IZp" id="E8X-kq-Rfl"/>
+                            <outlet property="delegate" destination="JJB-hh-IZp" id="e8p-VJ-fha"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMm-y4-9UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="2017"/>
         </scene>
         <!--Answer-->
         <scene sceneID="DMA-bv-dto">

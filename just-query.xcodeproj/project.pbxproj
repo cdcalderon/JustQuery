@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071FD3A21C9F9EFF00212E03 /* UserProfilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071FD3A11C9F9EFF00212E03 /* UserProfilesTableViewController.m */; };
+		071FD3A51C9FA1F200212E03 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 071FD3A41C9FA1F200212E03 /* UserProfile.m */; };
 		072E755125E4E50E2537CB9C /* libPods-just-query.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5526AC3A76AE984A9E21E14A /* libPods-just-query.a */; };
 		07489BCE1C6A5F1000603ED8 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489BCD1C6A5F1000603ED8 /* Question.m */; };
 		07489BD11C7155B600603ED8 /* AddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489BD01C7155B600603ED8 /* AddQuestionViewController.m */; };
@@ -43,6 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071FD3A01C9F9EFF00212E03 /* UserProfilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfilesTableViewController.h; sourceTree = "<group>"; };
+		071FD3A11C9F9EFF00212E03 /* UserProfilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfilesTableViewController.m; sourceTree = "<group>"; };
+		071FD3A31C9FA1F200212E03 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		071FD3A41C9FA1F200212E03 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		07489BCC1C6A5F1000603ED8 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		07489BCD1C6A5F1000603ED8 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		07489BCF1C7155B600603ED8 /* AddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuestionViewController.h; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 				07B4E73E1C871B20005A26AE /* AnswersController.m */,
 				07FFF7691C96239D003F4CDE /* UserProfileViewController.h */,
 				07FFF76A1C96239D003F4CDE /* UserProfileViewController.m */,
+				071FD3A01C9F9EFF00212E03 /* UserProfilesTableViewController.h */,
+				071FD3A11C9F9EFF00212E03 /* UserProfilesTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +204,8 @@
 				07489BCD1C6A5F1000603ED8 /* Question.m */,
 				07B4E7401C872793005A26AE /* Answer.h */,
 				07B4E7411C872793005A26AE /* Answer.m */,
+				071FD3A31C9FA1F200212E03 /* UserProfile.h */,
+				071FD3A41C9FA1F200212E03 /* UserProfile.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -399,6 +409,7 @@
 			files = (
 				07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */,
 				07F496591C5E132B0075FB0B /* MaterialTextField.m in Sources */,
+				071FD3A51C9FA1F200212E03 /* UserProfile.m in Sources */,
 				078C225B1C5EE53300457416 /* Dataservice.m in Sources */,
 				078C22601C5F0BA300457416 /* Constants.m in Sources */,
 				07B4E7421C872793005A26AE /* Answer.m in Sources */,
@@ -409,6 +420,7 @@
 				074A7DB11C64B6F00006A6A2 /* QuestionViewController.m in Sources */,
 				07489BD41C74565B00603ED8 /* SubmitAnswerViewController.m in Sources */,
 				078C22571C5EAA3900457416 /* LoginViewController.m in Sources */,
+				071FD3A21C9F9EFF00212E03 /* UserProfilesTableViewController.m in Sources */,
 				07489BCE1C6A5F1000603ED8 /* Question.m in Sources */,
 				07B4E73F1C871B20005A26AE /* AnswersController.m in Sources */,
 				07F496561C5E0B9A0075FB0B /* MaterialButton.m in Sources */,
