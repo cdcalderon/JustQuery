@@ -17,6 +17,9 @@
     self.userProfileKey = userProfileKey;
     self.userProfileDescription = dictionary[@"description"];
     self.userProfilePicture = dictionary[@"picture"];
+    self.userProfileFirstName = dictionary[@"firstName"];
+    self.userProfileLastName = dictionary[@"lastName"];
+
     
     return self;
 }

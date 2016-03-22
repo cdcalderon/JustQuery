@@ -20,5 +20,7 @@
 @property (nonatomic, strong) UIImage *userProfileImage;
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UITextView *userDescription;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 
 @end

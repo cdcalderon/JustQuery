@@ -10,6 +10,8 @@
 
 @interface UserProfile : NSObject
 
+@property (nonatomic, strong) NSString *userProfileFirstName;
+@property (nonatomic, strong) NSString *userProfileLastName;
 @property (nonatomic, strong) NSString *userProfileDescription;
 @property (nonatomic, strong) NSString *userProfilePicture;
 @property (nonatomic, strong) NSString *userProfileKey;

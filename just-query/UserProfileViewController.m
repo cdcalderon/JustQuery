@@ -41,6 +41,12 @@
                 if([snapshot.value isKindOfClass:[NSDictionary class]]){
                     NSString *profileDescription = [snapshot.value objectForKey:@"description"];
                     NSString *imageUrl = [snapshot.value objectForKey:@"picture"];
+                    NSString *firstName = [snapshot.value objectForKey:@"firstName"];
+                    NSString *lastName = [snapshot.value objectForKey:@"lastName"];
+                    
+                    self.firstNameTextField.text = firstName;
+                    self.lastNameTextField.text = lastName;
+
                     self.userDescription.text = profileDescription;
                     NSURL *url = [NSURL URLWithString:imageUrl];
                     
@@ -207,7 +213,10 @@
         {
 
             [uploader upload:imageToUpload options:@{@"public_id": dataService.currentUserRef.key} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
-                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": self.userDescription.text};
+                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"],
+                                          @"description": self.userDescription.text,
+                                          @"firstName": self.firstNameTextField.text,
+                                          @"lastName": self.lastNameTextField.text};
                 [_userProfileRef updateChildValues:profile];
                 
             } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
@@ -226,7 +235,10 @@
         {
 
             [uploader upload:imageToUpload options:@{@"public_id": dataService.currentUserRef.key} withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
-                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"], @"description": self.userDescription.text};
+                NSDictionary *profile = @{@"picture": [successResult objectForKey:@"url"],
+                                          @"description": self.userDescription.text,
+                                          @"firstName": self.firstNameTextField.text,
+                                          @"lastName": self.lastNameTextField.text};
                 
 
                 Firebase *newQuestionRef = [dataService.profilesRef childByAutoId];

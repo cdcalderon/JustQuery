@@ -59,8 +59,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"test 2";
-    cell.detailTextLabel.text = @"test details";
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [self.userProfiles[indexPath.row] userProfileFirstName],
+                                                               [self.userProfiles[indexPath.row] userProfileLastName]];
+
+    cell.detailTextLabel.text = [self.userProfiles[indexPath.row] userProfileDescription];
 //    cell.questionBody.text = [self.questions[indexPath.row] questionDescription];
 //    cell.answerNumberButtonLink1.tag = indexPath.row;
 //    cell.answerIndicatorButtonLink2.tag = indexPath.row;
