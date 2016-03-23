@@ -63,6 +63,22 @@
                                                                [self.userProfiles[indexPath.row] userProfileLastName]];
 
     cell.detailTextLabel.text = [self.userProfiles[indexPath.row] userProfileDescription];
+    
+    NSString *imageUrl = [self.userProfiles[indexPath.row] userProfilePicture];;
+    NSURL *url = [NSURL URLWithString:imageUrl];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if ( !error )
+                               {
+                                   UIImage *image = [[UIImage alloc] initWithData:data];
+                                   cell.imageView.image = image;
+                               } else{
+                                   NSLog(@"Error @%", error);                                               }
+                           }];
+    
 //    cell.questionBody.text = [self.questions[indexPath.row] questionDescription];
 //    cell.answerNumberButtonLink1.tag = indexPath.row;
 //    cell.answerIndicatorButtonLink2.tag = indexPath.row;
@@ -110,7 +126,8 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (v
+ oid)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
