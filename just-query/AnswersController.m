@@ -10,11 +10,13 @@
 #import "Dataservice.h"
 #import "Constants.h"
 #import "Answer.h"
+#import "AnswerCell.h"
 
 @implementation AnswersController
 
 - (void)viewDidLoad
 {
+    
     NSLog(@"NSStringFromUIEdgeInsets(self.itemTextField.contentInset) = %@", NSStringFromUIEdgeInsets(self.questionBody.contentInset));
 
     self.questionBody.contentInset = UIEdgeInsetsZero;
@@ -86,17 +88,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"Cell";
+    static NSString *simpleTableIdentifier = @"AnswerCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    AnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        
+        cell = [[AnswerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[self.answers objectAtIndex:indexPath.row] answerDescription];
+    cell.answerUpVoteButton.tag = indexPath.row;
+    
+    NSLog(@"%ld", (long)indexPath.row);
+    [cell.answerUpVoteButton addTarget:self action:@selector(answerUpvoteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.answerBodyTextView.text =[[self.answers objectAtIndex:indexPath.row] answerDescription];
+
+    
+
+    //cell.textLabel.text = [[self.answers objectAtIndex:indexPath.row] answerDescription];
     
     //cell.imageView.image = [UIImage imageNamed:@"geekPic.jpg"];
     
@@ -112,6 +122,22 @@
         // do something with object
     }
     return NO;
+}
+
+-(void)answerUpvoteButtonClicked:(UIButton*)sender
+{
+    NSLog(@"%ld", (long)sender.tag);
+    
+    NSString *answerKey = [self.answers[sender.tag] answerKey];
+
+    NSLog(@"%@", answerKey);
+
+    
+    if (sender.tag < 10)
+    {
+        NSLog(@"%ld", (long)sender.tag);
+        // Your code here
+    }
 }
 
 @end

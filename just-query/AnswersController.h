@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *questionKey;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewAnswers;
 @property (nonatomic, strong) NSMutableArray *answers;
+@property (nonatomic, strong) UITapGestureRecognizer *tapPressGestureRecognizer;
+
 @end
