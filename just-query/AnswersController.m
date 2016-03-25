@@ -103,8 +103,40 @@
     [cell.answerUpVoteButton addTarget:self action:@selector(answerUpvoteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     cell.answerBodyTextView.text =[[self.answers objectAtIndex:indexPath.row] answerDescription];
-
+    Dataservice *dataService = [Dataservice sharedDataservice];
     
+    Firebase *userProfileRef2 = [dataService.answersRef childByAppendingPath:[self.answers[indexPath.row] answerKey]];
+    Firebase *answerUpvotes = [userProfileRef2 childByAppendingPath:@"upvotes"];
+    // Attach a block to read the data at our posts reference
+    [answerUpvotes observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@" UPVAOTES %@", snapshot.value);
+        NSArray *snapShots = snapshot.children.allObjects;
+        for (FDataSnapshot *snap in snapShots) {
+            NSLog(@"Snap Key %@", snap.key);
+            
+            NSLog(@"Snap Value %@", snap.value);
+            NSDictionary *profile = snap.value;
+            
+            if([profile isKindOfClass:[NSDictionary class]]){
+                
+                NSString *profileKey = [[profile allKeys] objectAtIndex:0];
+                NSString *userId = dataService.currentUserRef.key;
+                NSLog(@" dic Key %@", profileKey);
+                NSLog(@" UserIdd %@", userId);
+                if ([profileKey isEqualToString:userId]) {
+                    UIImage *btnImage = [UIImage imageNamed:@"thumbUpF.png"];
+                    [cell.answerUpVoteButton setImage:btnImage forState:UIControlStateNormal];
+                    
+                }
+                NSLog(@" dic Key %@", [[profile allKeys] objectAtIndex:0]);
+
+            }
+        }
+
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+
 
     //cell.textLabel.text = [[self.answers objectAtIndex:indexPath.row] answerDescription];
     
@@ -127,17 +159,53 @@
 -(void)answerUpvoteButtonClicked:(UIButton*)sender
 {
     NSLog(@"%ld", (long)sender.tag);
-    
     NSString *answerKey = [self.answers[sender.tag] answerKey];
-
     NSLog(@"%@", answerKey);
 
+    // Sync before push master
+    NSLog(@"the Answer key where I need to inser the upvote is :::: %@", self.questionKey);
+    Dataservice *dataService = [Dataservice sharedDataservice];
     
-    if (sender.tag < 10)
-    {
-        NSLog(@"%ld", (long)sender.tag);
-        // Your code here
-    }
+    NSLog(@"User IDDD: %@", dataService.currentUserRef.key);
+    Firebase *answerRef = [dataService.answersRef childByAppendingPath:answerKey];
+    Firebase *answerUpvotes = [answerRef childByAppendingPath:@"upvotes"];
+    // Attach a block to read the data at our posts reference
+    [answerUpvotes observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@" UPVAOTES %@", snapshot.value);
+        NSArray *snapShots = snapshot.children.allObjects;
+        BOOL upvoted = NO;
+        for (FDataSnapshot *snap in snapShots) {
+            NSLog(@"Snap Key %@", snap.key);
+            
+            NSLog(@"Snap Value %@", snap.value);
+            NSDictionary *profile = snap.value;
+            
+            if([profile isKindOfClass:[NSDictionary class]]){
+                
+                NSString *profileKey = [[profile allKeys] objectAtIndex:0];
+                NSString *userId = dataService.currentUserRef.key;
+                NSLog(@" dic Key %@", profileKey);
+                NSLog(@" UserIdd %@", userId);
+                if ([profileKey isEqualToString:userId]) {
+                    upvoted = YES;
+                }
+                NSLog(@" dic Key %@", [[profile allKeys] objectAtIndex:0]);
+                
+            }
+        }
+        if (upvoted == NO) {
+            NSDictionary *newAnswerForQuestion = @{dataService.currentUserRef.key : @YES};
+            
+            //////
+            Firebase *newAnswerRef = [answerUpvotes childByAutoId];
+            [newAnswerRef setValue: newAnswerForQuestion];
+
+        }
+        
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+
 }
 
 @end
