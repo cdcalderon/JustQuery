@@ -168,6 +168,8 @@
         UIButton *pressedButton = (UIButton *)sender;
         ac.questionBodyDescription = [self.questions[pressedButton.tag] questionDescription];
         ac.questionKey = [self.questions[pressedButton.tag] questionKey];
+        ac.questionUserIdKey = [self.questions[pressedButton.tag] userId];
+
     } else if ([segue.destinationViewController isKindOfClass:[UserProfileViewController class]]) {
         UserProfileViewController *ac = (UserProfileViewController *)segue.destinationViewController;
        
