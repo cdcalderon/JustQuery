@@ -24,8 +24,6 @@
     self.questionBody.text = self.questionBodyDescription;
     
     [self setImageToUIImageView:self.questionUserImage fromUserId:self.questionUserIdKey];
-
-    
     Dataservice *dataService = [Dataservice sharedDataservice];
     Firebase *questionRef = [dataService.questionsRef childByAppendingPath:self.questionKey];
     

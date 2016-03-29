@@ -96,68 +96,10 @@
     [cloudinary.config setValue:@"carlos-calderon" forKey:@"cloud_name"];
     [cloudinary.config setValue:@"686262751217777" forKey:@"api_key"];
     [cloudinary.config setValue:@"5qSCCtXQ45SHWF-dUeNi7JkpwZY" forKey:@"api_secret"];
-    
-    
-   // CLCloudinary *cloudinary = [[CLCloudinary alloc] init];
-    //[cloudinary.config setValue:@"demo" forKey:@"cloud_name"];
-    
-    //NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:@"logocomplete" ofType:@"png"];
-    
     CLUploader* uploader = [[CLUploader alloc] init:cloudinary delegate:self];
-   // [uploader unsignedUpload:imageFilePath uploadPreset:@"zcudy0uz" options:@{}];
-    
     
     _userProfileImage = info[UIImagePickerControllerEditedImage];
     if (!_userProfileImage) _userProfileImage = info[UIImagePickerControllerOriginalImage];
-    
-    
-    
-//    NSData *imageToUpload = UIImageJPEGRepresentation(_userProfileImage, 0.2);
-//    
-//    if (imageToUpload)
-//    {
-//    
-////        NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
-////        
-////        [uploader unsignedUpload:imageToUpload uploadPreset:@"zcudy0uz" options:[NSDictionary dictionaryWithObjectsAndKeys:@"user_sample_image_Carlos", @"public_id", @"tags", @"ios_upload", nil] withCompletion:^(NSDictionary *successResult, NSString *errorResult, NSInteger code, id context) {
-////            
-////            if (successResult) {
-////                
-////                NSString* publicId = [successResult valueForKey:@"public_id"];
-////                NSLog(@"Upload success. Public ID=%@, Full result=%@", publicId, successResult);
-////                CLTransformation *transformation = [CLTransformation transformation];
-////                [transformation setWidthWithInt: 150];
-////                [transformation setHeightWithInt: 100];
-////                [transformation setCrop: @"fill"];
-////                [transformation setGravity:@"face"];
-////                
-////                NSLog(@"Result: %@", [cloudinary url:publicId options:@{@"transformation": transformation, @"format": @"jpg"}]);
-////                
-////            } else {
-////                
-////                NSLog(@"Upload error: %@, %d", errorResult, code);
-////                
-////            }
-////            
-////        } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
-////            NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
-////        }];
-////        
-////        NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
-////        [uploader upload:imageData options:@{@"public_id": @"ios_image_1"}];
-////        
-////        
-////        
-////        
-//        
-//        [uploader upload:imageToUpload options:@{@"public_id": @"ios_image_5"}];
-//        
-//        
-//        
-//    }
-    
-    
-    
     
     NSLog(@"Finish Picking");
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -192,12 +134,6 @@
     [cloudinary.config setValue:@"carlos-calderon" forKey:@"cloud_name"];
     [cloudinary.config setValue:@"686262751217777" forKey:@"api_key"];
     [cloudinary.config setValue:@"5qSCCtXQ45SHWF-dUeNi7JkpwZY" forKey:@"api_secret"];
-    
-    
-    // CLCloudinary *cloudinary = [[CLCloudinary alloc] init];
-    //[cloudinary.config setValue:@"demo" forKey:@"cloud_name"];
-    
-    //NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:@"logocomplete" ofType:@"png"];
     
     CLUploader* uploader = [[CLUploader alloc] init:cloudinary delegate:self];
 
@@ -256,15 +192,10 @@
             } andProgress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite, id context) {
                 NSLog(@"Upload progress: %d/%d (+%d)", totalBytesWritten, totalBytesExpectedToWrite, bytesWritten);
             }];
-
             
         }
         
     }
-    
-    
-    
-    //self.questionBody.text = @"";
 }
 
 @end
