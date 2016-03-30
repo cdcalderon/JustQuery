@@ -110,8 +110,10 @@
                 
                 if([snapshot.value isKindOfClass:[NSDictionary class]]){
                     NSString *profileDescription = [snapshot.value objectForKey:@"description"];
+                    NSString *fullName = [NSString stringWithFormat:@"%@ %@", [snapshot.value objectForKey:@"firstName"], [snapshot.value objectForKey:@"lastName"]];
+                    
                     NSString *imageUrl = [snapshot.value objectForKey:@"picture"];
-                    cell.myLabel.text = profileDescription;
+                    cell.myLabel.text = fullName;
                     NSURL *url = [NSURL URLWithString:imageUrl];
                     
                     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

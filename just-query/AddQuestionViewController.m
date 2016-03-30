@@ -50,6 +50,8 @@
     [userQuestionsRef setValue:userQuestion];
     
     self.questionBody.text = @"";
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 @end

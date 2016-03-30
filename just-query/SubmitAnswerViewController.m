@@ -32,16 +32,11 @@
     Firebase *answersForQuestionRef = [questionRef childByAppendingPath:@"answers"];
    
     NSDictionary *newAnswerForQuestion = @{newAnswerRef.key : @YES};
-    
-    //////
-    Firebase *newAnswerRef2 = [answersForQuestionRef childByAutoId];
-    [newAnswerRef2 setValue: newAnswerForQuestion];
-
-    
-    /////
-   // [answersForQuestionRef setValue: newAnswerForQuestion];
+    Firebase *newAnswerInAnswersForQuestionRef = [answersForQuestionRef childByAutoId];
+    [newAnswerInAnswersForQuestionRef setValue: newAnswerForQuestion];
     
     self.answerTextView.text = @"";
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
