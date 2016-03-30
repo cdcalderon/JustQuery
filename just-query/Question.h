@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *questionDescription;
 @property (nonatomic, strong) NSString *questionKey;
 @property (nonatomic, strong) NSString *userId;
+@property (nonatomic) NSUInteger numOfAnswers;
 
 - (instancetype)init:(NSString *)questionKey dictionary:(NSDictionary *)dictionary;
 @end

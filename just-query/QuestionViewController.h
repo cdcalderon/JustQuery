@@ -11,5 +11,6 @@
 @interface QuestionViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *questions;
+@property (nonatomic, strong) NSArray *sortedQuestions;
 
 @end
