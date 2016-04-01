@@ -24,6 +24,7 @@
 		07B4E7421C872793005A26AE /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4E7411C872793005A26AE /* Answer.m */; };
 		07EAC3341CAA3FBC00CFEF90 /* thumbsUpE.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EAC3321CAA3FBC00CFEF90 /* thumbsUpE.png */; };
 		07EAC3351CAA3FBC00CFEF90 /* thumbsUpF.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EAC3331CAA3FBC00CFEF90 /* thumbsUpF.png */; };
+		07EAC3381CADF4E000CFEF90 /* MaterialUITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EAC3371CADF4E000CFEF90 /* MaterialUITextView.m */; };
 		07F496271C5D763E0075FB0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496261C5D763E0075FB0B /* main.m */; };
 		07F4962A1C5D763E0075FB0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F496291C5D763E0075FB0B /* AppDelegate.m */; };
 		07F496301C5D763E0075FB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F4962E1C5D763E0075FB0B /* Main.storyboard */; };
@@ -78,6 +79,8 @@
 		07B4E7411C872793005A26AE /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		07EAC3321CAA3FBC00CFEF90 /* thumbsUpE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUpE.png; sourceTree = "<group>"; };
 		07EAC3331CAA3FBC00CFEF90 /* thumbsUpF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUpF.png; sourceTree = "<group>"; };
+		07EAC3361CADF4E000CFEF90 /* MaterialUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialUITextView.h; sourceTree = "<group>"; };
+		07EAC3371CADF4E000CFEF90 /* MaterialUITextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialUITextView.m; sourceTree = "<group>"; };
 		07F496221C5D763E0075FB0B /* just-query.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "just-query.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F496261C5D763E0075FB0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07F496281C5D763E0075FB0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				074A7DAD1C64ADE90006A6A2 /* QuestionCell.m */,
 				071FD3AF1CA3B4D400212E03 /* AnswerCell.h */,
 				071FD3B01CA3B4D400212E03 /* AnswerCell.m */,
+				07EAC3361CADF4E000CFEF90 /* MaterialUITextView.h */,
+				07EAC3371CADF4E000CFEF90 /* MaterialUITextView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				07B4E7421C872793005A26AE /* Answer.m in Sources */,
 				07FFF76B1C96239D003F4CDE /* UserProfileViewController.m in Sources */,
 				07F496271C5D763E0075FB0B /* main.m in Sources */,
+				07EAC3381CADF4E000CFEF90 /* MaterialUITextView.m in Sources */,
 				074A7DAE1C64ADE90006A6A2 /* QuestionCell.m in Sources */,
 				07489BD11C7155B600603ED8 /* AddQuestionViewController.m in Sources */,
 				074A7DB11C64B6F00006A6A2 /* QuestionViewController.m in Sources */,

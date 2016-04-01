@@ -14,6 +14,9 @@
 
 - (void)viewDidLoad
 {
+    self.questionBodyTextField.contentInset = UIEdgeInsetsZero;
+    self.automaticallyAdjustsScrollViewInsets = false;
+
     self.questionBodyTextField.text = self.questionBody;
 }
 
