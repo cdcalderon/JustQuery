@@ -75,7 +75,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-c0-3Fn">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-L5-n8x" customClass="MaterialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-L5-n8x" customClass="MaterialButton">
                                                 <rect key="frame" x="105" y="16" width="419" height="34"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="16"/>
@@ -245,7 +245,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-0x-9ii">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsUpE.png" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-0x-9ii">
                                                     <rect key="frame" x="471" y="8" width="40" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="3oK-8c-QAX"/>
