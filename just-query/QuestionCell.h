@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *answerNumberButtonLink1;
 @property (weak, nonatomic) IBOutlet UIButton *answerIndicatorButtonLink2;
 @property (weak, nonatomic) IBOutlet UIImageView *userPicture;
+@property (weak, nonatomic) IBOutlet UIButton *followUserButton;
 
 @end

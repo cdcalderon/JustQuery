@@ -75,7 +75,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-c0-3Fn">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-L5-n8x" customClass="MaterialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-L5-n8x" customClass="MaterialButton">
                                                 <rect key="frame" x="105" y="16" width="419" height="34"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="16"/>
@@ -253,16 +253,22 @@
                                                         <constraint firstAttribute="width" constant="40" id="ggE-Ja-M3B"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFf-7E-fQu">
+                                                    <rect key="frame" x="419" y="13" width="44" height="30"/>
+                                                    <state key="normal" title="Follow"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="WTM-CX-vBJ" firstAttribute="leading" secondItem="nY8-0x-9ii" secondAttribute="trailing" constant="13" id="4zT-JL-Ejs"/>
                                                 <constraint firstItem="dMD-hp-hIo" firstAttribute="leading" secondItem="A9O-HT-lVM" secondAttribute="leading" constant="8" id="7qe-g5-bri"/>
                                                 <constraint firstAttribute="trailing" secondItem="HhZ-bg-S9z" secondAttribute="trailing" constant="8" id="8dA-Xk-TUU"/>
+                                                <constraint firstItem="RFf-7E-fQu" firstAttribute="top" secondItem="A9O-HT-lVM" secondAttribute="top" constant="13" id="97m-52-gq1"/>
                                                 <constraint firstItem="WTM-CX-vBJ" firstAttribute="top" secondItem="A9O-HT-lVM" secondAttribute="top" constant="16" id="C7e-pr-ckC"/>
                                                 <constraint firstItem="zD4-0v-pVL" firstAttribute="top" secondItem="A9O-HT-lVM" secondAttribute="top" constant="20" id="EPF-jT-luc"/>
                                                 <constraint firstItem="nY8-0x-9ii" firstAttribute="top" secondItem="A9O-HT-lVM" secondAttribute="top" constant="8" id="Qrh-Tz-QiD"/>
                                                 <constraint firstAttribute="trailing" secondItem="WTM-CX-vBJ" secondAttribute="trailing" constant="8" id="U1p-Bb-jRb"/>
+                                                <constraint firstItem="nY8-0x-9ii" firstAttribute="leading" secondItem="RFf-7E-fQu" secondAttribute="trailing" constant="8" id="Vhm-Iy-Enr"/>
                                                 <constraint firstItem="zD4-0v-pVL" firstAttribute="centerY" secondItem="dMD-hp-hIo" secondAttribute="centerY" id="XEK-HU-pGU"/>
                                                 <constraint firstItem="HhZ-bg-S9z" firstAttribute="leading" secondItem="A9O-HT-lVM" secondAttribute="leading" constant="8" id="bey-Dt-oiS"/>
                                                 <constraint firstItem="HhZ-bg-S9z" firstAttribute="top" secondItem="dMD-hp-hIo" secondAttribute="bottom" constant="8" symbolic="YES" id="dRq-Rf-Lmt"/>
@@ -280,6 +286,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="answerNumberButtonLink1" destination="WTM-CX-vBJ" id="geg-dz-UBu"/>
+                                    <outlet property="followUserButton" destination="RFf-7E-fQu" id="GPb-wP-LzY"/>
                                     <outlet property="myLabel" destination="zD4-0v-pVL" id="tGC-yh-nCT"/>
                                     <outlet property="questionBody" destination="HhZ-bg-S9z" id="a32-0y-ibz"/>
                                     <outlet property="userPicture" destination="dMD-hp-hIo" id="bcA-rU-tSe"/>

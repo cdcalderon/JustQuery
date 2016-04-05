@@ -152,6 +152,11 @@
     }];
     
     
+    
+    cell.followUserButton.tag=indexPath.row;
+    [cell.followUserButton addTarget:self
+               action:@selector(followUser:) forControlEvents:UIControlEventTouchUpInside];
+    
     cell.questionBody.text = [self.sortedQuestions[indexPath.row] questionDescription];
     cell.answerNumberButtonLink1.tag = indexPath.row;
     cell.answerIndicatorButtonLink2.tag = indexPath.row;
@@ -184,6 +189,11 @@
     if ([segue.destinationViewController isKindOfClass:[AddQuestionViewController class]]) {
         NSLog(@"addedQuestion addedQuestion addedQuestion addedQuestion addedQuestion");
     }
+}
+
+-(void)followUser:(UIButton*)sender
+{
+    NSLog(@"I Clicked a button %d",sender.tag);
 }
 
 @end
