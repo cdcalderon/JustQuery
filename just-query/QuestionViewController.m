@@ -181,7 +181,6 @@
         UserProfileViewController *ac = (UserProfileViewController *)segue.destinationViewController;
        
     }
-
 }
 
 - (IBAction)addedQuestion:(UIStoryboardSegue *)segue
@@ -193,7 +192,19 @@
 
 -(void)followUser:(UIButton*)sender
 {
-    NSLog(@"I Clicked a button %d",sender.tag);
+    Dataservice *dataService = [Dataservice sharedDataservice];
+    UIButton *pressedButton = (UIButton *)sender;
+    NSString *questionUserIdKey = [self.sortedQuestions[pressedButton.tag] userId];
+    NSLog(@"I Clicked a button %@",questionUserIdKey);
+    
+    Firebase *userProfileRef = [dataService.currentUserRef childByAppendingPath:@"following"];
+    NSLog(@"IDDD: %@", dataService.currentUserRef.key);
+
+    
+    NSDictionary *newAnswerForQuestion = @{questionUserIdKey : @YES};
+    Firebase *newAnswerInAnswersForQuestionRef = [userProfileRef childByAutoId];
+    [newAnswerInAnswersForQuestionRef setValue: newAnswerForQuestion];
+    
 }
 
 @end
